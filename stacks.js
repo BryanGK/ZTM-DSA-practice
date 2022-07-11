@@ -1,3 +1,5 @@
+// implement a stack using linked lists
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -43,16 +45,56 @@ class Stack {
   }
 }
 
-const myStack = new Stack();
+// const myStack = new Stack();
+// console.log(myStack.isEmpty());
+// myStack.push('Google');
+// myStack.push('Udemy');
+// myStack.push('YouTube');
+// myStack.push('LinkedIn');
+// console.log(myStack.peek());
+// console.log(myStack.isEmpty());
+// console.log(myStack.pop());
+// console.log(myStack.pop());
+// console.log(myStack.pop());
+// console.log(myStack.pop());
+// console.log(myStack);
+
+// implement a stack using arrays
+
+class ArrayStack {
+  constructor() {
+    this.stack = []
+  }
+
+  peek() {
+    return this.stack[this.stack.length - 1];
+  }
+  push(value) {
+    this.stack.push(value);
+    return this;
+  }
+  pop() {
+    if (this.stack.length < 1) {
+      return 'Empty stack, nothing to remove';
+    }
+    this.stack.pop();
+    return this;
+  }
+  isEmpty() {
+    if (this.stack.length === 0) {
+      return true;
+    }
+    return false;
+  }
+}
+
+const myStack = new ArrayStack();
+console.log(myStack.pop());
 console.log(myStack.isEmpty());
-myStack.push('Google');
-myStack.push('Udemy');
-myStack.push('YouTube');
-myStack.push('LinkedIn');
+myStack.push(1);
+myStack.push(2);
+myStack.push(3);
 console.log(myStack.peek());
 console.log(myStack.isEmpty());
-console.log(myStack.pop());
-console.log(myStack.pop());
-console.log(myStack.pop());
-console.log(myStack.pop());
-// console.log(myStack);
+myStack.pop();
+console.log(myStack.peek());
